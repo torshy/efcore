@@ -83,6 +83,14 @@ namespace Microsoft.EntityFrameworkCore.TestUtilities
                 return Task.CompletedTask;
             }
 
+            public void Save(string savepointName) => throw new NotSupportedException();
+            public Task SaveAsync(string savepointName, CancellationToken cancellationToken = default) => throw new NotSupportedException();
+            public void Rollback(string savepointName) => throw new NotSupportedException();
+            public Task RollbackAsync(string savepointName, CancellationToken cancellationToken = default) => throw new NotSupportedException();
+            public void Release(string savepointName) => throw new NotSupportedException();
+            public Task ReleaseAsync(string savepointName, CancellationToken cancellationToken = default) => throw new NotSupportedException();
+            public bool AreSavepointsSupported => false;
+
             public ValueTask DisposeAsync()
             {
                 Dispose();

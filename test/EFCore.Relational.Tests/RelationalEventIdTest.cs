@@ -169,6 +169,15 @@ namespace Microsoft.EntityFrameworkCore
 
             public void RollbackTransaction() => throw new NotImplementedException();
             public Task RollbackTransactionAsync(CancellationToken cancellationToken = default) => throw new NotImplementedException();
+
+            public void CreateSavepoint(string savepointName) => throw new NotImplementedException();
+            public Task CreateSavepointAsync(string savepointName, CancellationToken cancellationToken = default) => throw new NotImplementedException();
+            public void RollbackSavepoint(string savepointName) => throw new NotImplementedException();
+            public Task RollbackSavepointAsync(string savepointName, CancellationToken cancellationToken = default) => throw new NotImplementedException();
+            public void ReleaseSavepoint(string savepointName) => throw new NotImplementedException();
+            public Task ReleaseSavepointAsync(string savepointName, CancellationToken cancellationToken = default) => throw new NotImplementedException();
+            public bool AreSavepointsSupported => throw new NotImplementedException();
+
             public IDbContextTransaction UseTransaction(DbTransaction transaction) => throw new NotImplementedException();
 
             public Task<IDbContextTransaction> UseTransactionAsync(

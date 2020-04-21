@@ -353,6 +353,20 @@ namespace Microsoft.EntityFrameworkCore.Query
             public Task RollbackTransactionAsync(CancellationToken cancellationToken = default)
                 => Task.CompletedTask;
 
+            public void CreateSavepoint(string savepointName) => throw new NotSupportedException();
+            public Task CreateSavepointAsync(string savepointName, CancellationToken cancellationToken = default)
+                => throw new NotSupportedException();
+
+            public void RollbackSavepoint(string savepointName) => throw new NotSupportedException();
+            public Task RollbackSavepointAsync(string savepointName, CancellationToken cancellationToken = default)
+                => throw new NotSupportedException();
+
+            public void ReleaseSavepoint(string savepointName) => throw new NotSupportedException();
+            public Task ReleaseSavepointAsync(string savepointName, CancellationToken cancellationToken = default)
+                => throw new NotSupportedException();
+
+            public bool AreSavepointsSupported => false;
+
             public IDbContextTransaction CurrentTransaction => throw new NotImplementedException();
             public SemaphoreSlim Semaphore { get; }
 

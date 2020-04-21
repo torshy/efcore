@@ -270,6 +270,32 @@ namespace Microsoft.EntityFrameworkCore.Storage
             await ClearTransactionAsync(cancellationToken);
         }
 
+        /// <inheritdoc />
+        public virtual void Save(string savepointName)
+            => throw new NotSupportedException();
+
+        /// <inheritdoc />
+        public virtual Task SaveAsync(string savepointName, CancellationToken cancellationToken = default)
+            => throw new NotSupportedException();
+
+        /// <inheritdoc />
+        public virtual void Rollback(string savepointName)
+            => throw new NotSupportedException();
+
+        /// <inheritdoc />
+        public virtual Task RollbackAsync(string savepointName, CancellationToken cancellationToken = default)
+            => throw new NotSupportedException();
+
+        /// <inheritdoc />
+        public virtual void Release(string savepointName) { }
+
+        /// <inheritdoc />
+        public virtual Task ReleaseAsync(string savepointName, CancellationToken cancellationToken = default)
+            => Task.CompletedTask;
+
+        /// <inheritdoc />
+        public virtual bool AreSavepointsSupported => false;
+
         /// <summary>
         ///     Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
